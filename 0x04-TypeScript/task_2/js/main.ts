@@ -51,3 +51,23 @@ function createEmployee(salary: number | string) {
   }
 }
 
+// Create the isDirector function as a type predicate
+function isDirector(employee: unknown): employee is Director {
+  return employee instanceof Director;
+}
+
+// Create the Subjects string literal type
+type Subjects = 'Math' | 'History';
+
+// Create the teachClass function
+function teachClass(todayClass: Subjects) {
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  } else if (todayClass === 'History') {
+    return 'Teaching History';
+  }
+}
+
+// Test the teachClass function
+console.log(teachClass('Math'));     // Output: Teaching Math
+console.log(teachClass('History'));  // Output: Teaching History
