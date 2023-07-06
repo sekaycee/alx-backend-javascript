@@ -52,3 +52,10 @@ interface Teacher {
   location: string;
   [key: string]: any;
 }
+
+// Define the interface named Directors that extends Teacher
+interface Directors extends Teacher {
+  numberOfReports: number;
+}
+
+
