@@ -84,4 +84,32 @@ interface printTeacherFunction {
 const teacherName = printTeacher("John", "Doe");
 console.log(teacherName);
 
+// Define the interface for the constructor of StudentClass
+interface StudentClassConstructor {
+  new (firstName: string, lastName: string): StudentClass;
+}
 
+// Define the interface for the StudentClass
+interface StudentClass {
+  workOnHomework(): string;
+  displayName(): string;
+}
+
+// Define the StudentClass
+class StudentClass implements StudentClass {
+  constructor(public firstName: string, public lastName: string) {}
+
+  workOnHomework(): string {
+    return "Currently working";
+  }
+
+  displayName(): string {
+    return this.firstName;
+  }
+}
+
+// Create an instance of StudentClass
+const student = new StudentClass("John", "Doe");
+
+console.log(student.workOnHomework()); // Output: Currently working
+console.log(student.displayName()); // Output: John
