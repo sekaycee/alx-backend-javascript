@@ -58,4 +58,30 @@ interface Directors extends Teacher {
   numberOfReports: number;
 }
 
+// Create an instance of Directors
+const director1: Directors = {
+  firstName: "John",
+  lastName: "Doe",
+  location: "London",
+  fullTimeEmployee: true,
+  numberOfReports: 17,
+};
+
+console.log(director1);
+
+// Define the printTeacher function
+function printTeacher(firstName: string, lastName: string): string {
+  const firstLetter = firstName.charAt(0);
+  return `${firstLetter}. ${lastName}`;
+}
+
+// Define the interface named printTeacherFunction
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
+}
+
+// Example usage of printTeacher function
+const teacherName = printTeacher("John", "Doe");
+console.log(teacherName);
+
 
